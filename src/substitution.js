@@ -20,6 +20,8 @@ const substitutionModule = (function() {
         let output = "";
 
         if (encode == true) {
+
+            input = input.toLowerCase();
             for (let i = 0; i < input.length; i++) {
                 if (input[i] == " ") {
                     output += " ";

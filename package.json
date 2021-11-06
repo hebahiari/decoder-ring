@@ -16,8 +16,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "live-server": "^1.2.1",
-    "mocha": "^8.1.3"
-  }
+    "mocha": "^8.4.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebahiari/decoder-ring.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hebahiari/decoder-ring/issues"
+  },
+  "homepage": "https://github.com/hebahiari/decoder-ring#readme"
 }
