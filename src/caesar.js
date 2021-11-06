@@ -11,7 +11,7 @@ const caesarModule = (function() {
 
         if (!encode) shift = -shift;
 
-        let result = "";
+        let output = "";
         input = input.toLowerCase();
 
         for (let i = 0; i < input.length; i++) {
@@ -29,16 +29,13 @@ const caesarModule = (function() {
                 }
 
                 let newLetter = String.fromCharCode(shiftedCharCode);
-                result += newLetter;
+                output += newLetter;
             } else {
-                console.log(input[i]);
-                result += input[i];
+                output += input[i];
             }
         }
 
-        console.log(result);
-
-        return result;
+        return output;
     }
 
     return {
