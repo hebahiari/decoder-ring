@@ -1,5 +1,4 @@
 const polybiusModule = (function() {
-
     function polybius(input, encode = true) {
         let polybuisSquare = [
             ["a", "b", "c", "d", "e"],
@@ -11,8 +10,36 @@ const polybiusModule = (function() {
 
         let output = "";
 
-        //check if decoding
-        if (encode == false) {
+        if (encode == true) {
+            input = input.toLowerCase();
+
+            for (let h = 0; h < input.length; h++) {
+                switch (input[h]) {
+                    // if spaces, add as is
+                    case " ":
+                        output += " ";
+                        break;
+
+                        // if j or i, add 42
+                    case "j":
+                    case "i":
+                        output += 42;
+                        break;
+
+                    default:
+                        for (let row = 0; row < polybuisSquare.length; row++) {
+                            for (
+                                let column = 0; column < polybuisSquare[row].length; column++
+                            ) {
+                                if (input[h] == polybuisSquare[row][column]) {
+                                    output = output + [column + 1] + [row + 1];
+                                    // added 1 to row and column because index starts at 0
+                                }
+                            }
+                        }
+                }
+            }
+        } else if (encode == false) {
             //check if number of characters is even
             let numberOfCharacters = 0;
             for (let i = 0; i < input.length; i++) {
@@ -30,34 +57,6 @@ const polybiusModule = (function() {
                     output += polybuisSquare[digits[1] - 1][digits[0] - 1];
 
                     i++;
-                }
-            }
-        }
-
-        if (encode == true) {
-            input = input.toLowerCase();
-
-            for (let h = 0; h < input.length; h++) {
-                switch (input[h]) {
-                    case " ":
-                        output += " ";
-                        break;
-
-                    case "j":
-                    case "i":
-                        output += 42;
-                        break;
-
-                    default:
-                        for (let row = 0; row < polybuisSquare.length; row++) {
-                            for (
-                                let column = 0; column < polybuisSquare[row].length; column++
-                            ) {
-                                if (input[h] == polybuisSquare[row][column]) {
-                                    output = output + [column + 1] + [row + 1];
-                                }
-                            }
-                        }
                 }
             }
         }
