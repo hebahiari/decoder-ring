@@ -3,7 +3,7 @@ const { polybius } = require("../src/polybius.js");
 
 describe("polybius() tests written by h.a.", () => {
 
-    it("It ignores capital letters", () => {
+    it("ignores capital letters", () => {
         let nocapital = polybius("a message");
         let capitalized = polybius("A Message");
 
@@ -11,7 +11,7 @@ describe("polybius() tests written by h.a.", () => {
     });
 
 
-    it(" When encoding, it translates the letters i and j to 42.", () => {
+    it("it translates the letters i and j to 42.", () => {
         let expected = "42";
         let actual1 = polybius("j");
         let actual2 = polybius("i");
@@ -20,7 +20,7 @@ describe("polybius() tests written by h.a.", () => {
         expect(actual2).to.equal(expected);
     });
 
-    it("When decoding, it translates 42 to (i/j)", () => {
+    it("translates 42 to (i/j)", () => {
         let expected = "(i/j)";
         let actual = polybius("42", false);
 
@@ -28,7 +28,7 @@ describe("polybius() tests written by h.a.", () => {
     });
 
 
-    it(" It maintains spaces in the message, before and after encoding or decoding.", () => {
+    it("maintains spaces in the message, before and after encoding or decoding.", () => {
         let expected1 = "11 21";
         let expected2 = "a b";
         let actual1 = polybius("a b");

@@ -24,14 +24,14 @@ describe("caesar() tests written by h.a.", () => {
 
     });
 
-    it("it handles shifts that go past the end of the alphabet", () => {
+    it("handles shifts that go past the end of the alphabet", () => {
         let expected = "a"
         let actual = caesar("z", 1)
 
         expect(actual).to.equal(expected);
     });
 
-    it("It maintains spaces and other nonalphabetic symbols in the message", () => {
+    it("maintains spaces and other nonalphabetic symbols in the message", () => {
         let expected = "b c*d"
         let actual = caesar("a b*c", 1)
 
