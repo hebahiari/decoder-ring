@@ -2,7 +2,7 @@ const caesarModule = (function() {
 
     function caesar(input, shift, encode = true) {
         // check that shift fits the requirements
-        if (shift == 0 || shift < -25 || shift > 25 || shift == null) return false;
+        if (shift === 0 || shift < -25 || shift > 25 || shift === undefined) return false;
 
         //shift the other way if decoding
         if (!encode) shift = -shift;

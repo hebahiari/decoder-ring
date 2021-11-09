@@ -1,7 +1,7 @@
 const substitutionModule = (function() {
     function substitution(input, alphabet, encode = true) {
         // check if alphabet exists and is the correct length
-        if (!alphabet || !(alphabet.length == 26)) return false;
+        if (!alphabet || !(alphabet.length === 26)) return false;
 
         // check for duplicates in alphabet
         let alphabetCheck = "";
@@ -12,11 +12,11 @@ const substitutionModule = (function() {
 
         let output = "";
 
-        if (encode == true) {
+        if (encode === true) {
             input = input.toLowerCase();
             for (let i = 0; i < input.length; i++) {
                 // add spaces as is
-                if (input[i] == " ") {
+                if (input[i] === " ") {
                     output += " ";
                 } else {
                     //find charcode of the letter
@@ -27,15 +27,15 @@ const substitutionModule = (function() {
                     output += alphabet[alphabetIndex];
                 }
             }
-        } else if (encode == false) {
+        } else if (encode === false) {
             for (let i = 0; i < input.length; i++) {
                 // add spaces as is
-                if (input[i] == " ") {
+                if (input[i] === " ") {
                     output += " ";
                 } else {
                     for (let j = 0; j < alphabet.length; j++) {
                         // find the letter's position in the alphabet
-                        if (input[i] == alphabet[j]) {
+                        if (input[i] === alphabet[j]) {
                             output += String.fromCharCode(j + 97);
                         }
                     }

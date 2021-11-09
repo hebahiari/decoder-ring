@@ -10,7 +10,7 @@ const polybiusModule = (function() {
 
         let output = "";
 
-        if (encode == true) {
+        if (encode === true) {
             input = input.toLowerCase();
 
             for (let h = 0; h < input.length; h++) {
@@ -31,7 +31,7 @@ const polybiusModule = (function() {
                             for (
                                 let column = 0; column < polybuisSquare[row].length; column++
                             ) {
-                                if (input[h] == polybuisSquare[row][column]) {
+                                if (input[h] === polybuisSquare[row][column]) {
                                     output = output + [column + 1] + [row + 1];
                                     // added 1 to row and column because index starts at 0
                                 }
@@ -39,18 +39,18 @@ const polybiusModule = (function() {
                         }
                 }
             }
-        } else if (encode == false) {
+        } else if (encode === false) {
             //check if number of characters is even
             let numberOfCharacters = 0;
             for (let i = 0; i < input.length; i++) {
-                if (!(input[i] == " ")) numberOfCharacters++;
+                if (!(input[i] === " ")) numberOfCharacters++;
             }
             if (numberOfCharacters % 2 > 0) return false;
 
             //take two digits at a time
             for (let i = 0; i < input.length; i++) {
                 //add spaces as is
-                if (input[i] == " ") {
+                if (input[i] === " ") {
                     output += " ";
                 } else {
                     let digits = input[i] + input[i + 1];
